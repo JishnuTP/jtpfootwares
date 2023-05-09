@@ -11,10 +11,10 @@ const size= require ('../models/sizeMode')
 const color= require ('../models/colorModel')
 const cloudinary = require('cloudinary').v2;
 //pdf coverter requirements
-const ejs = require('ejs');
-const pdf = require('html-pdf');
-const fs = require('fs');
-const path = require('path');
+// const ejs = require('ejs');
+// const pdf = require('html-pdf');
+// const fs = require('fs');
+// const path = require('path');
 
 
 cloudinary.config({
@@ -475,45 +475,45 @@ const ApproveReturn = async (req, res) => {
 }
 
 //export order report
-const exportOrder =async (req, res) =>{
-    try {
-        const from = req.query.from
-        const to = req.query.to
+// const exportOrder =async (req, res) =>{
+//     try {
+//         const from = req.query.from
+//         const to = req.query.to
 
 
-        const data = {
-            report: req.session.Orderdtls,
+//         const data = {
+//             report: req.session.Orderdtls,
           
-        }
+//         }
 
-        const filepath = path.resolve(__dirname, '../views/admin/salesreporttopdf.ejs')
-        const htmlstring = fs.readFileSync(filepath).toString()
+//         const filepath = path.resolve(__dirname, '../views/admin/salesreporttopdf.ejs')
+//         const htmlstring = fs.readFileSync(filepath).toString()
 
-        let option = {
-            format: "A3"
-        }
-        const ejsData = ejs.render(htmlstring, data)
-        pdf.create(ejsData, option).toFile('salesReport.pdf', (err, response) => {
-            if (err) console.log(err);
+//         let option = {
+//             format: "A3"
+//         }
+//         const ejsData = ejs.render(htmlstring, data)
+//         pdf.create(ejsData, option).toFile('salesReport.pdf', (err, response) => {
+//             if (err) console.log(err);
 
-            const filepath = path.resolve(__dirname, '../salesReport.pdf')
-            fs.readFile(filepath, (err, file) => {
-                if (err) {
-                    console.log(err);
-                    return res.status(500).send('could not download file')
-                }
-                res.setHeader('Content-Type', 'application/pdf')
-                res.setHeader('Content-Disposition', 'attatchment;filename="Sales Report.pdf"')
+//             const filepath = path.resolve(__dirname, '../salesReport.pdf')
+//             fs.readFile(filepath, (err, file) => {
+//                 if (err) {
+//                     console.log(err);
+//                     return res.status(500).send('could not download file')
+//                 }
+//                 res.setHeader('Content-Type', 'application/pdf')
+//                 res.setHeader('Content-Disposition', 'attatchment;filename="Sales Report.pdf"')
 
-                res.send(file)
+//                 res.send(file)
 
-            })
-        })
-    } catch (error) {
+//             })
+//         })
+//     } catch (error) {
 
-        console.log(error.message);
+//         console.log(error.message);
 
-    }}
+//     }}
 
 
 //reject return

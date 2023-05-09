@@ -20,10 +20,10 @@ dotenv.config()
 
 
 //pdf coverter requirements
-const ejs = require('ejs');
-const pdf = require('html-pdf');
-const fs = require('fs');
-const path = require('path');
+// const ejs = require('ejs');
+// const pdf = require('html-pdf');
+// const fs = require('fs');
+// const path = require('path');
 
 
 
@@ -785,47 +785,47 @@ const loadMyOrders=async(req,res)=>{
 }
 
 ///invoice download
-const invoice = async (req, res) => {
-  try {
-      // const orderData = await order.find()
-      // const data = { orderData: orderData }
+// const invoice = async (req, res) => {
+//   try {
+//       // const orderData = await order.find()
+//       // const data = { orderData: orderData }
 
-      const id =req.query.id
+//       const id =req.query.id
             
-        const orderdetails = await order.findOne({_id:id}).populate("product.productId").sort({Date:-1})
+//         const orderdetails = await order.findOne({_id:id}).populate("product.productId").sort({Date:-1})
         
-        const orderData= orderdetails.product
+//         const orderData= orderdetails.product
 
         
-        const data={
-            report:orderdetails,
-            data:orderData
-}
+//         const data={
+//             report:orderdetails,
+//             data:orderData
+// }
 
 
 
 
-      const filepathName = path.resolve(__dirname, '../views/users/invoicepdf.ejs');
-      const htmlString = fs.readFileSync(filepathName).toString();
+//       const filepathName = path.resolve(__dirname, '../views/users/invoicepdf.ejs');
+//       const htmlString = fs.readFileSync(filepathName).toString();
 
-      let options = {
-          format: 'letter'
+//       let options = {
+//           format: 'letter'
 
-      }
+//       }
 
-      const ejsData = ejs.render(htmlString, data);
-      pdf.create(ejsData, options).toFile('invoice.pdf', (err, response) => {
-          if (err)
-              console.log(err);
+//       const ejsData = ejs.render(htmlString, data);
+//       pdf.create(ejsData, options).toFile('invoice.pdf', (err, response) => {
+//           if (err)
+//               console.log(err);
 
-      })
+//       })
 
 
-  } catch (error) {
+//   } catch (error) {
 
-      console.log(error.message);
-  }
-}
+//       console.log(error.message);
+//   }
+// }
 
 
 //delete address
