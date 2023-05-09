@@ -1215,7 +1215,6 @@ module.exports = {
   removewhishlist,
   loadMyOrders,
   deleteAddress,
-  invoice,
   loadCheckoutBuy,
    placeOrderBuy,
   verifyOnlinePaymentBuy,

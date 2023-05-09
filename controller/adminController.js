@@ -626,7 +626,6 @@ module.exports = {
     cancelOrder,
     DeliverOrder,
     ApproveReturn,
-    exportOrder,
     RejectReturn,
     loadSalesreport,
     showOrder
