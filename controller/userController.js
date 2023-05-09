@@ -1,5 +1,5 @@
-const { log } = require("console");
-const User = require("../models/userModel");
+const { log }= require('console');
+const User = require('../models/userModel');
 const bcrypt = require('bcrypt')
 const nodemailer = require('nodemailer')
 const Randomstring = require('randomstring');
@@ -24,8 +24,6 @@ dotenv.config()
 // const pdf = require('html-pdf');
 // const fs = require('fs');
 // const path = require('path');
-
-
 
 
 var instance= new Razorpay({
