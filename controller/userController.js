@@ -777,7 +777,7 @@ const loadMyOrders=async(req,res)=>{
     const orderData = await order.find({user:userData.name})
 
    
-    res.render('myorder',{userData,session,orderData})
+    res.render('myOrder',{userData,session,orderData})
     
   } catch (error) {
     console.log(error.message);
