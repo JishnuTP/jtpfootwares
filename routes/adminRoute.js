@@ -27,7 +27,7 @@ admin_route.get('/order_status',adminAuth.isLogin,adminController.cancelOrder)
 admin_route.get('/orderDeliver_status',adminAuth.isLogin,adminController.DeliverOrder)
 admin_route.get('/orderReturn_status',adminAuth.isLogin,adminController.ApproveReturn)
 admin_route.get('/orderReject_status',adminAuth.isLogin,adminController.RejectReturn)
-admin_route.get('/export-order-pdf',adminAuth.isLogin,adminController.exportOrder)
+// admin_route.get('/export-order-pdf',adminAuth.isLogin,adminController.exportOrder)
 admin_route.get('/single_orderAdmin',adminAuth.isLogin,adminController.showOrder);
 admin_route.get('/report',adminAuth.isLogin,adminController.loadSalesreport);
 admin_route.post('/login',adminController.verifyLogin);
