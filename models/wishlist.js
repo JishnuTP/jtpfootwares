@@ -1,5 +1,5 @@
-const { ObjectId } = require('mongodb')
-const mongoose=require('mongoose')
+const { ObjectId } = require('mongodb');
+const mongoose = require('mongoose');
 
 const whishListSchema=new mongoose.Schema({
     userId:{

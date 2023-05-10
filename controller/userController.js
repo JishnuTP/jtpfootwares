@@ -866,7 +866,7 @@ const loadCheckoutBuy = async (req, res) => {
 
       
 
-      res.render('checkoutBuynow', { userData, session, address, Total,productData })
+      res.render('checkoutbuynow', { userData, session, address, Total,productData })
     
     } else {
 
